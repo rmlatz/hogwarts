@@ -5430,3 +5430,112 @@ Started GET "/new_student" for 127.0.0.1 at 2015-04-15 04:27:09 -0400
 Processing by StudentsController#new as HTML
   Rendered students/new.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2015-04-15 04:32:05 -0400
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.3ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-04-15 04:32:07 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mHouse Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered students/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/new_student" for 127.0.0.1 at 2015-04-15 04:32:07 -0400
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2015-04-15 04:32:25 -0400
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.3ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2015-04-15 04:32:27 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students" WHERE "students"."house_id" = $1  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-15 04:35:36 -0400
+
+
+Started GET "/students" for 127.0.0.1 at 2015-04-15 04:35:50 -0400
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students"
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered students/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/new_student" for 127.0.0.1 at 2015-04-15 04:35:55 -0400
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-04-15 04:35:58 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mHouse Load (0.2ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "houses".* FROM "houses" WHERE "houses"."id" = $1 ORDER BY "houses"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered students/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2015-04-15 04:36:00 -0400
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.4ms)
